@@ -1,2 +1,7 @@
 # AutoBeton
-Meterial testing automation using robot arm and computer vision. 
+
+Automation "Auto", french word for concrete "Beton", Kinova arm - company based in Quebec.
+
+---
+#Introduction
+
