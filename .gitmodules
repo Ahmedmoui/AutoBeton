@@ -1,0 +1,40 @@
+[submodule "src/moveit2_tutorials"]
+	path = src/moveit2_tutorials
+	url = https://github.com/moveit/moveit2_tutorials
+[submodule "src/moveit_task_constructor"]
+	path = src/moveit_task_constructor
+	url = https://github.com/moveit/moveit_task_constructor.git
+	branch = ros2
+[submodule "src/moveit_visual_tools"]
+	path = src/moveit_visual_tools
+	url = https://github.com/moveit/moveit_visual_tools
+	branch = ros2
+[submodule "src/ros2_kortex"]
+	path = src/ros2_kortex
+	url = https://github.com/Kinovarobotics/ros2_kortex.git
+	branch = main
+
+[submodule "src/ros2_robotiq_gripper"]
+	path = src/ros2_robotiq_gripper
+	url = https://github.com/PickNikRobotics/ros2_robotiq_gripper.git
+	branch = main
+[submodule "src/serial"]
+	path = src/serial
+	url = https://github.com/tylerjw/serial.git
+	branch = ros2
+[submodule "src/rviz_visual_tools"]
+	path = src/rviz_visual_tools
+	url = https://github.com/PickNikRobotics/rviz_visual_tools.git
+	branch = ros2
+[submodule "src/moveit2"]
+	path = src/moveit2
+	url = https://github.com/moveit/moveit2
+	branch = main
+[submodule "src/moveit_resources"]
+	path = src/moveit_resources
+	url = https://github.com/moveit/moveit_resources
+	branch = ros2
+[submodule "src/moveit_msgs"]
+	path = src/moveit_msgs
+	url = https://github.com/moveit/moveit_msgs
+	branch = ros2
