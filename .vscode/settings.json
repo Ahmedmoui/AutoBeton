@@ -1,3 +1,17 @@
 {
-    "cmake.sourceDirectory": "/home/autobeton1/project_AutoBeton/AutoBeton/src/moveit_resources/fanuc_moveit_config"
+    "cmake.sourceDirectory": "/home/latif/Autobeton/src/mtc_tutorial",
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/compile_commands.json",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "python.analysis.extraPaths": [
+        "./build/moveit_configs_utils/build/lib"
+    ],
+    "python.autoComplete.extraPaths": [
+        "/home/latif/Autobeton/install/moveit_task_constructor_core/lib/python3.12/site-packages",
+        "/home/latif/Autobeton/install/moveit_task_constructor_msgs/lib/python3.12/site-packages",
+        "/home/latif/Autobeton/install/moveit_py/lib/python3.12/site-packages",
+        "/home/latif/Autobeton/install/hello_moveit/lib/python3.12/site-packages",
+        "/home/latif/Autobeton/install/moveit_msgs/lib/python3.12/site-packages",
+        "/home/latif/Autobeton/install/moveit_configs_utils/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ]
 }

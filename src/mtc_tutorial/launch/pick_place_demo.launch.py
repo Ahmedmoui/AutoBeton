@@ -1,16 +1,4 @@
-# Copyright (c) 2023 PickNik, Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+
 
 import os
 
@@ -70,18 +58,15 @@ def launch_setup(context, *args, **kwargs):
             moveit_config.to_dict(),
         ],
     )
-    # Load  ExecuteTaskSolutionCapability so we can execute found solutions in simulation
-    move_group_capabilities = {
-        "capabilities": "move_group/ExecuteTaskSolutionCapability"
-    }
-        # MTC Demo node
-    pick_place_demo = Node(
+
+    # MTC Demo node
+
+    mtc_node = Node(
         package="mtc_tutorial",
         executable="mtc_node",
         output="screen",
         parameters=[moveit_config.to_dict(),
-                    move_group_capabilities,
-                    ],   
+                    ],
     )
 
     # Static TF
@@ -147,8 +132,8 @@ def launch_setup(context, *args, **kwargs):
 
     # rviz with moveit configuration
     rviz_config_file = (
-        get_package_share_directory("kinova_gen3_7dof_robotiq_2f_85_moveit_config")
-        + "/config/moveit.rviz"
+        get_package_share_directory("mtc_tutorial")
+        + "/config/rviz.rviz"
     )
     rviz_node = Node(
         package="rviz2",
@@ -185,6 +170,7 @@ def launch_setup(context, *args, **kwargs):
         condition=IfCondition(launch_rviz),
     )
 
+
     nodes_to_start = [
         ros2_control_node,
         robot_state_publisher,
@@ -196,6 +182,7 @@ def launch_setup(context, *args, **kwargs):
         fault_controller_spawner,
         move_group_node,
         static_tf,
+        mtc_node,
     ]
 
     return nodes_to_start
@@ -207,13 +194,14 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "robot_ip",
+            default_value="yyy.yyy.yyy.yyy",
             description="IP address by which the robot can be reached.",
         )
     )
     declared_arguments.append(
         DeclareLaunchArgument(
             "use_fake_hardware",
-            default_value="false",
+            default_value="true",
             description="Start robot with fake hardware mirroring command to its states.",
         )
     )
